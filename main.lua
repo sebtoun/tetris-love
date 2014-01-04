@@ -2,6 +2,7 @@ local level = require 'tetrisGrid'
 local visu = require 'visu'
 local score = require 'score'
 local lg = love.graphics
+local Tetro = require 'Tetromino'
 
 -- ui elements
 -- ui panels sizes (in blocks)
@@ -69,7 +70,7 @@ local randomTetro = randomBag(tetroNames)
 local function spawnTetro()
   currentTetro = nextTetro
   local tetro = randomTetro()
-  nextTetro = level.Tetro:new( tetro, { x = math.floor(width / 2), y = 1 } )
+  nextTetro = Tetro.new( tetro, { x = math.floor(width / 2), y = 1 } )
 end
 
 local function reset()
